@@ -1,4 +1,4 @@
-# LeBonSandwich - Partie Global
+# LeBonSandwich - Partie Global
 
 ## Membres de l'équipe
 
