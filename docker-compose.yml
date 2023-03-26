@@ -120,7 +120,7 @@ services:
   catalogue.data:
     image: postgis/postgis:13-master
     volumes:
-      - ./lbs_catalogue_service/data/database:/var/lib/postgresql/data
+      - ./LBS_Catalog-Service/data/database:/var/lib/postgresql/data
     networks:
       - lbs.net
     environment:
@@ -133,10 +133,12 @@ services:
     ports:
       - 19055:8055
     volumes:
-      - ./lbs_catalogue_service/uploads:/directus/uploads
-      - ./lbs_catalogue_service/extensions:/directus/extensions
+      - ./LBS_Catalog-Service/uploads:/directus/uploads
+      - ./LBS_Catalog-Service/extensions:/directus/extensions
     networks:
-      - lbs.net
+      lbs.net:
+        aliases:
+          - api.catalogue.local
     depends_on:
       - catalogue.data
     environment:
